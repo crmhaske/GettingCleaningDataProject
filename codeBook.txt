@@ -1,0 +1,54 @@
+Code Book
+==========
+
+This code book describes what each of the variables and variable levels represent in the dttidy.txt and dttidymeans.txt data sets.
+
+dttidy.txt and dttidymeans.txt
+--------------------------------
+
+subject:    An integer number between 1 and 30 for each subject that had their data recorded
+            All subjects were between the ages of 19 and 48 years
+
+activity:   The activity taking place when the measurements were taken:
+            - STANDING
+            - SITTING
+            - LAYING
+            - WALKING
+            - WALKING_DOWNSTAIRS
+            - WALKING_UPSTAIRS
+
+feature:    The feature being measured.
+            All features are normalized and bounded within [-1,1]:
+            - fBodyAcc                accelerometer
+            - fBodyAccJerk            accelerometer
+            - fBodyAccMag             accelerometer
+            - fBodyBodyAccJerkMag     accelerometer
+            - fBodyBodyGyroJerkMag    gyroscope 
+            - fBodyBodyGyroMag"       gyroscope 
+            - fBodyGyro               gyroscope 
+            - tBodyAcc                accelerometer
+            - tBodyAccJerk            accelerometer
+            - tBodyAccJerkMag         accelerometer
+            - tBodyAccMag             accelerometer
+            - tBodyGyro               gyroscope 
+            - tBodyGyroJerk           gyroscope 
+            - tBodyGyroJerkMag        gyroscope 
+            - tBodyGyroMag            gyroscope 
+            - tGravityAcc             accelerometer
+            - tGravityAccMag          accelerometer
+
+axis:	    If applicable: indicates whether the measurement was taken on the X, Y, or Z axis.
+            If not applicable: NA
+
+
+dttidy.txt only
+----------------
+record:
+mean:
+std:
+
+
+dttidymeans.txt only
+---------------------
+avgMean:
+avgStd:
