@@ -7,7 +7,7 @@ dttidy.txt and dttidymeans.txt
 --------------------------------
 
 subject:    An integer number between 1 and 30 for each subject that had their data recorded
-            All subjects were between the ages of 19 and 48 years
+            All subjects were volunteers and between the ages of 19 and 48 years
 
 activity:   The activity taking place when the measurements were taken:
             - STANDING
@@ -19,23 +19,39 @@ activity:   The activity taking place when the measurements were taken:
 
 feature:    The feature being measured.
             All features are normalized and bounded within [-1,1]:
-            - fBodyAcc                accelerometer
-            - fBodyAccJerk            accelerometer
-            - fBodyAccMag             accelerometer
-            - fBodyBodyAccJerkMag     accelerometer
-            - fBodyBodyGyroJerkMag    gyroscope 
-            - fBodyBodyGyroMag"       gyroscope 
-            - fBodyGyro               gyroscope 
-            - tBodyAcc                accelerometer
-            - tBodyAccJerk            accelerometer
-            - tBodyAccJerkMag         accelerometer
-            - tBodyAccMag             accelerometer
-            - tBodyGyro               gyroscope 
-            - tBodyGyroJerk           gyroscope 
-            - tBodyGyroJerkMag        gyroscope 
-            - tBodyGyroMag            gyroscope 
-            - tGravityAcc             accelerometer
-            - tGravityAccMag          accelerometer
+
+            Freuqnecy domain signals
+            Fast Fourier Transform of the time domain signals
+            - fBodyAcc                
+            - fBodyAccJerk            
+            - fBodyAccMag             
+            - fBodyAccJerkMag     
+            - fBodyGyroJerkMag    
+            - fBodyGyroMag     
+            - fBodyGyro
+
+            Time domain signals
+            Captured at a constant rate of 50Hz
+            3rd order low pass Butterworth filtered (corner frequency 20 Hz) to remove noise
+            - tBodyAcc                
+            - tBodyAccJerk            
+            - tBodyAccJerkMag         
+            - tBodyAccMag             
+            - tBodyGyro               
+            - tBodyGyroJerk           
+            - tBodyGyroJerkMag        
+            - tBodyGyroMag            
+            - tGravityAcc             
+            - tGravityAccMag          
+
+            If the feature contains Acc it is an accelerometer measurement
+            If the feature contains Gyro it is a gyroscope  measurement
+
+            Accerlerometer Body and Gravity signals were separated using a low pass
+            Butterworth filter (corner frequency 0.3 Hz)
+
+            Jerk signals were obtained by deriving in time
+            The magnitude (Mag) is the Euclidena norm of the Z, Y, and Z components
 
 axis:	    If applicable: indicates whether the measurement was taken on the X, Y, or Z axis.
             If not applicable: NA
@@ -43,12 +59,19 @@ axis:	    If applicable: indicates whether the measurement was taken on the X, Y
 
 dttidy.txt only
 ----------------
-record:
-mean:
-std:
+record:     An integer number indicating the vector the feature measurements belong to.
+            Used for the purpose of grouping vectors.
+            There is no direct meaning of the value of the integer
+
+mean:       The mean of the measured feature in the window (units vary by feature)
+
+std:        The standard deviation of the measured feature window (units vary by feature)
 
 
 dttidymeans.txt only
 ---------------------
-avgMean:
-avgStd:
+avgMean:    The average of the means across all vectors
+            Grouped by: subject, activity, feature, and axis
+
+avgStd:     The average of the standard deviations across all vectors
+            Grouped by: subject, activity, feature, and axis
