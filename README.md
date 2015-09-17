@@ -2,6 +2,7 @@ Getting and Cleaning Data Project
 ===
 
 By Christie Haskell
+
 September 17, 2015
 
 The files contained in this repository are in fulfillment of the project requirements for the Getting and Cleaning Data Coursera Course. All of the work contained in this repository is my own.
